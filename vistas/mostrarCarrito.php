@@ -1,19 +1,25 @@
 <?php
-session_start();
-include 'lib/config.php';
+if (!isset($_SESSION)) {
+    session_start();
+}
+include '../config/setting.php';
 include '../controladores/carritoCompras.php';
-include 'layout/menu.php';
 ?>
-<br><br>
+<body>
+
+<?php
+    include_once('layout/menu.php');
+    ?>
 <h3>Lista del Carrito</h3>
 <?php if(!empty($_SESSION['CARRITO'])) { ?>
     
     <div class="mt-3" id="respuesta">
 
     </div>
-    <table class="table table-light-bordered">
+    <div class="table-container">
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
         <thead>
-            <tr>
+            <tr class="has-text-centered">
                 <th with="%30" class="text-center">Producto</th>
                 <th with="%20" class="text-center">Cantidad</th>
                 <th with="%15" class="text-center">Precio</th>
@@ -24,22 +30,22 @@ include 'layout/menu.php';
         <tbody>
             <?php $total = 0; ?>
             <?php foreach($_SESSION['CARRITO'] as $items => $producto) { ?>
-                <tr>
+                <tr class="has-text-centered">
                     <td with="%40" class="text-center"><?php echo $producto['NOMBRE'] ?></td>
                     <td with="%15" class="text-center"><?php echo $producto['CANTIDAD'] ?></td>
-                    <td with="%20" class="text-center">$<?php echo $producto['PRECIO'] ?></td>
-                    <td with="%20" class="text-center">$<?php echo number_format($producto['PRECIO']*$producto['CANTIDAD'], 2); ?></td>
+                    <td with="%20" class="text-center">€<?php echo $producto['PRECIO'] ?></td>
+                    <td with="%20" class="text-center">€<?php echo number_format($producto['PRECIO']*$producto['CANTIDAD'], 2); ?></td>
                     <td with="%5" align="right">
-                    <form action="" method="post">
+                    <form action="#" method="post">
                             <input type="hidden" name="id" value="<?php echo openssl_encrypt($producto['ID'], COD, KEY); ?>" />
                             <input type="hidden" name="cantidad" value="<?php echo openssl_encrypt($producto['CANTIDAD'], COD, KEY); ?>" />
-                            <button class="btn btn-danger" type="submit" name="btnAccion" value="Eliminar">Eliminar</button>
+                            <button class="btn btn-primary" type="submit" name="btnAccion" value="Eliminar">Eliminar</button>
                         </form>
                     </td>
                 </tr>
                 <?php $total = $total + ($producto['PRECIO'] * $producto['CANTIDAD']); ?>
                 <?php } ?>
-            <tr>
+            <tr class="has-text-centered">
                 <td colspan="3" align="right">
                     <h3>Total</h3>
                 </td>
@@ -48,9 +54,9 @@ include 'layout/menu.php';
                 </td>
                 <td colspan="2"></td>
             </tr>
-            <tr>
+            <tr class="has-text-centered">
                 <td colspan="5">
-                    <form action="index.php?vista=pagar.php" method="post">
+                    <form action="index.php?vista=pagar" method="post">
                         <div class="alert alert-success">
 
                             <div class="form-group">
@@ -60,7 +66,7 @@ include 'layout/menu.php';
                             <small id="emailHelp" class="form-text text-muted">
                                 Los productos se enviaran a este correo</small>
                         </div>
-                        <button class="btn btn-primary btn-lg btn-block" name="btnAccion" type="submit" value="proceder">Proceder a Pagar >></button>
+                        <button class="btn btn-primary btn-lg btn-block" name="btnAccion" type="submit" value="Proceder">Proceder a Pagar >></button>
                     </form>
                 </td>
             </tr>
@@ -71,4 +77,6 @@ include 'layout/menu.php';
         No hay Productos en el carrito...
     </div>
 <?php } ?>
-<?php include 'templates/pie.php'; ?>
+</div>
+    
+</body>

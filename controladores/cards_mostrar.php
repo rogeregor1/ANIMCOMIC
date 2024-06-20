@@ -1,6 +1,6 @@
 <?php
 
-include_once 'lib/db.php';
+include_once '../lib/db.php';
 
 class Cards extends Db{
 
@@ -23,7 +23,7 @@ class Cards extends Db{
     }
 
     function mostrarProductos($cat){
-        $response = json_decode(file_get_contents('http://localhost/ANIMCOMIC/api/productos/api-productos.php?categoria=' . $cat), true);
+        $response = json_decode(file_get_contents('http://localhost/terminado/api/productos/api-productos.php?categoria=' . $cat), true);
 		if ($response['statuscode'] == 200) {
 			foreach ($response['items'] as $item) {
 				include('layout/items.php');
@@ -75,4 +75,3 @@ class Cards extends Db{
     }
 
 }
-?>

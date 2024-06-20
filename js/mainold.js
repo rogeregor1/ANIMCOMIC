@@ -29,7 +29,7 @@ bCarrito.addEventListener('click', (e) =>{
 });
 
 function actualizarCarritoUI(){
-    fetch('http://localhost/ANIMCOMIC/api/carrito/api-carrito.php?action=mostrar')
+    fetch('http://localhost/terminado/api/carrito/api-carrito.php?action=mostrar')
     .then(response =>{
         return response.json();
     })

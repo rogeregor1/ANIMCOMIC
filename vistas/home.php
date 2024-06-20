@@ -1,5 +1,5 @@
 <?php
-include_once 'controladores/cards_mostrar.php';
+include '../controladores/cards_mostrar.php';
 //$item = new Cards(5);
 ?>
 
@@ -9,7 +9,7 @@ include_once 'controladores/cards_mostrar.php';
     ?>
     <main class="cards-container" id="productos">
         <?php
-        $response = json_decode(file_get_contents('http://localhost/ANIMCOMIC/api/productos/api-productos.php?categoria=3'), true);
+        $response = json_decode(file_get_contents('http://localhost/terminado/api/productos/api-productos.php?categoria=3'), true);
         if ($response['statuscode'] == 200) {
             foreach ($response['items'] as $item) {
                 include('layout/items.php');
@@ -20,6 +20,8 @@ include_once 'controladores/cards_mostrar.php';
         ?>
     </main>
 
+
+</body>
     <script>
         /*
     document.addEventListener('DOMContentLoaded', () => {
@@ -100,7 +102,4 @@ include_once 'controladores/cards_mostrar.php';
     });
   */
     </script>
-    <script src="js/pasarela.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/script.js"></script>
-</body>
+    

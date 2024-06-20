@@ -1,5 +1,6 @@
 <div class="seleccion" id="seleccion">
     <div class="cerrar" onclick="cerrar()">&#x2715</div>
+    
     <div class="info">
         <img id="img" alt="" src="img/producto/<?php echo $item['imagen']; ?>" class="card-img-top" height="317px">
         <div class="card-body" style="background-color: lightgray;">

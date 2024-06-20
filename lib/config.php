@@ -1,7 +1,7 @@
 <?php
 
 define('HOST', 'localhost');
-define('DB', 'inventario2');
+define('DB', 'inventario3');
 define('USER', 'root');
 define('PASSWORD', '');
 

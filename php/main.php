@@ -1,11 +1,11 @@
 <?php
-	include_once('config.php');
-	include_once('db.php');
+	include_once('../lib/config.php');
+	include_once('../lib/db.php');
 	# Conexion a la base de datos #
 	function conexion(){
 		
 		try{
-		$pdo = new PDO('mysql:host=localhost;dbname=inventario2', 'root', '');
+		$pdo = new PDO('mysql:host=localhost;dbname=inventario3', 'root', '');
 		return $pdo;
 
 		}catch (PDOException $e){

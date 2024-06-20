@@ -1,5 +1,5 @@
 <?php
-require "inc/session_start.php";
+require_once "inc/session_start.php";
 require_once "lib/config.php";
 require_once "php/main.php";
 require_once "controladores/carritoCompras.php";

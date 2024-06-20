@@ -22,7 +22,7 @@
                 <div class="navbar-dropdown">
                     <a href="index.php?vista=home" class="navbar-item">Shopping</a>
                     <a href="index.php?vista=listaCarritos" class="navbar-item">Mis Pedidos</a>
-                    <a href="index.php?vista=mostrarCarrito&user_id_up=<?php echo $_SESSION['id']; ?>" class="navbar-item">Pasarela de pago</a>
+                    <a href="index.php?vista=mostrarCarrito" class="navbar-item">Pasarela de pago</a>
                 </div>
             </li>
 

@@ -16,6 +16,7 @@ if (isset($_GET['cerrar_sesion'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/registro.css">
 	<link rel="stylesheet" href="./css/estilos.css">
@@ -36,12 +37,12 @@ if (isset($_GET['cerrar_sesion'])) {
 <!-- Navbar -->
 <div class="w3-top">
 	<div class="w3-bar w3-black w3-card">
-		<a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+		<a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars" style="font-size:20px;color:white"></i></a>
 		<a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
 		<a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ART</a>
 		<a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">INICIO</a>
 		<a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACTO</a>
-		<div class="w3-dropdown-hover w3-hide-small">
+		<div class="w3-dropdown-hover w3-card">
 			<button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>
 			<div class="w3-dropdown-content w3-bar-block w3-card-4">
 				<a href="#" class="w3-bar-item w3-button">Merchandise</a>

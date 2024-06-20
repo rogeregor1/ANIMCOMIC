@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+<?php
+    include_once('layout/menu.php');
+    ?>
     aqui se mostraran en una tabla los pepidos anteriores y facturas
 </body>
 </html>

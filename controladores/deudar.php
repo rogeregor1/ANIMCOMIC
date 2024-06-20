@@ -1,7 +1,7 @@
 <?php
 
-include '../lib/db.php';
-include 'carritoCompras.php';
+include 'lib/db.php';
+include 'controladores/carritoCompras.php';
 ?>
 <?php
 if ($_POST) {
@@ -35,13 +35,16 @@ if ($_POST) {
         $sentencia->execute();
     }
     //echo "<h3>" . $total . "</h3>";
-}
 ?>
+<?php } else {
+  echo "<br><br><br><h3>No hay tranferencia </h3>";
+} ?>
+</div>
 <div class="jumbotron text-center">
     <h1 class="display-4">!Paso Final</h1>
     <hr class="my-4">
     <p class="lead">Estas a punto de Pagar con PaPal la cantidad de:
-    <h4>$<?php echo number_format($total, 2); ?></h4>
+    <h4>€<?php echo number_format($total, 2); ?></h4>
     </p>
     <p>Los productos podran ser descargados una vez se procese el pago<br>
     <strong>(para aclaraciones: rogerhurtado1809@gmail.com)</strong></p>

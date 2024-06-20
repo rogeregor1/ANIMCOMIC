@@ -14,9 +14,9 @@ function cargar(info){
     seleccion.style.opacity = "1";
     info.style.border = "4px solid red";
 
-    imgSeleccionada.src = info.getElementsByTagName("img")[0].src;
-    
     idSeleccionada.innerHTML =  info.getElementsByTagName("input")[0].innerHTML;
+
+    imgSeleccionada.src = info.getElementsByTagName("img")[0].src;
     
     nombreSeleccionado.innerHTML =  info.getElementsByClassName("cardTitle")[0].innerHTML;
 
@@ -26,7 +26,6 @@ function cargar(info){
 
     precioSeleccionado.innerHTML =  info.getElementsByClassName("cardPrecio")[0].innerHTML;
 
-
 }
 function cerrar(){
     mostrador.style.width = "100%";
@@ -35,7 +34,7 @@ function cerrar(){
     quitarBordes();
 }
 function quitarBordes(){
-    var items = document.getElementsByClassName("card-prod");
+    var items = document.getElementsByClassName("info");
     for(i=0;i <items.length; i++){
         items[i].style.border = "none";
     }

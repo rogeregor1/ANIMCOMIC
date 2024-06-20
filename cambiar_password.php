@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 require_once 'lib/db.php';
 
 $conexion = new DB;

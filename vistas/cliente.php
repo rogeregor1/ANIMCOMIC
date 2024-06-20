@@ -1,6 +1,6 @@
 <?php
-include_once 'controladores/cards_mostrar.php';
-$item = new Cards(5);
+include_once '../controladores/cards_mostrar.php';
+//$item = new Cards(5);
 ?>
 
 <body>
@@ -9,7 +9,7 @@ $item = new Cards(5);
     ?>
     <main class="cards-container" id="productos">
         <?php
-        $response = json_decode(file_get_contents('http://localhost/terminado/api/productos/api-productos.php?categoria=libros'), true);
+        $response = json_decode(file_get_contents('http://localhost/terminado/api/productos/api-productos.php?categoria=3'), true);
         if ($response['statuscode'] == 200) {
             foreach ($response['items'] as $item) {
                 include('layout/items.php');
@@ -21,5 +21,5 @@ $item = new Cards(5);
 
     </main>
 
-    <script src="js/main.js"></script>
+ 
 </body>

@@ -34,12 +34,13 @@ header {
  --------------*/
 
 nav{
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
-    background: transparent;
+    background: rgb(124, 112, 140);
 }
 nav ul{
+    display: block;
+    text-align: right;
     padding: 0;
     margin: 0;
 }
@@ -167,6 +168,8 @@ nav ul li a{
 }
 
 .agregar-carrito {
+    display: inline;
+    width: 100%;
     background-color: #4804b5;
     border: 1px solid rgb(128, 128, 128);
     color:#fff;
@@ -192,6 +195,8 @@ nav ul li a{
     overflow: hidden;
 }
 .cerrar{
+    color: #000;
+    size: 50%;
     position: absolute;
     top: 20px;
     right: 20px;
@@ -268,11 +273,6 @@ button .btn{
 }
 
 /*---------------------------------------
-
-
-
-
-
 
 
 /*cards*/
@@ -434,7 +434,7 @@ button.btn.btn-remove {
     max-width: 1200px;
  }
 
-section.mostrador{
+.mostrador{
     width: 100%;
     transition: .7s ease;
 }

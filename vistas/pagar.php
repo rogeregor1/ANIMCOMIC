@@ -1,11 +1,17 @@
 <?php
-session_start();
-include 'global/config.php';
-include 'global/conexion.php';
-include 'carrito.php';
-include 'templates/cabecera.php';
+if (!isset($_SESSION)) {
+    session_start();
+  }
+include '../config/setting.php';
+include '../lib/db.php';
+include '../controladores/carritoCompras.php';
 
 ?>
+<body>
+
+ <?php
+    include_once('layout/menu.php');
+    ?>
 <?php
 if ($_POST) {
     $total = 0;
@@ -38,17 +44,21 @@ if ($_POST) {
         $sentencia->execute();
     }
     //echo "<h3>" . $total . "</h3>";
-}
-?>
-<div class="jumbotron text-center">
-    <h1 class="display-4">!Paso Final</h1>
-    <hr class="my-4">
-    <p class="lead">Estas a punto de Pagar con PayPal la cantidad de:
-    <h4>€<?php echo number_format($total, 2); ?></h4>
-    </p>
-    <p>Los productos podran ser descargados una vez se procese el pago<br>
-    <strong>(para aclaraciones: rogerhurtado1809@gmail.com)</strong></p>
-</div>
-<?php
-include 'templates/pie.php';
-?>
+    ?>
+    <?php } else {
+      echo "<br><br><br><h3>No hay tranferencia </h3>";
+    } ?>
+    </div>
+ 
+    <div class="jumbotron text-center">
+      <h1 class="display-4">!Paso Final</h1>
+      <hr class="my-4">
+      <p class="lead">Estas a punto de Pagar con PayPal la cantidad de:
+      <h4>€<?php echo number_format($total, 2); ?></h4>
+      </p>
+      <p>Los productos podran ser descargados una vez se procese el pago<br>
+        <strong>(para aclaraciones: rogerhurtado1809@gmail.com)</strong>
+      </p>
+    </div>
+      
+</body>

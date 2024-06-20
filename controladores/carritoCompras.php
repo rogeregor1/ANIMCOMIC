@@ -1,6 +1,9 @@
 <?php
-session_start();
-include './lib/config.php';
+if (!isset($_SESSION)) {
+    session_start();
+}
+include 'lib/config.php';
+
 $mensaje = "";
 
 if (isset($_POST['btnAccion'])) {
@@ -68,12 +71,9 @@ if (isset($_POST['btnAccion'])) {
                         } else {
                             $mensaje = "No se puede agregar más productos, alcanzado el límite de stock";
                         }
-                        //echo "<script>alert('El producto ya ha sido seleccionado...')</script>";
-                        $mensaje = "";
                         break;
                     }
-                }
-                    
+                }         
                 } else {
 
                     $NumeroProductos = count($_SESSION['CARRITO']);
